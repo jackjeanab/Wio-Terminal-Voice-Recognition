@@ -238,15 +238,15 @@ void setup(){
 
   // Create a BLE Characteristic
   pTxCharacteristic = pService->createCharacteristic(
-										CHARACTERISTIC_UUID_TX,
-										BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_READ
+			CHARACTERISTIC_UUID_TX,
+			BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_READ
 									);
   pTxCharacteristic->setAccessPermissions(GATT_PERM_READ);      
   pTxCharacteristic->addDescriptor(new BLE2902());
 
   BLECharacteristic * pRxCharacteristic = pService->createCharacteristic(
-											 CHARACTERISTIC_UUID_RX,
-											BLECharacteristic::PROPERTY_WRITE
+			CHARACTERISTIC_UUID_RX,
+			BLECharacteristic::PROPERTY_WRITE
 										);
   pRxCharacteristic->setAccessPermissions(GATT_PERM_READ | GATT_PERM_WRITE);           
 
